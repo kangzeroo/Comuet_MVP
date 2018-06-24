@@ -5,6 +5,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Radium from 'radium'
 import PropTypes from 'prop-types'
+import uuid from 'uuid'
+import moment from 'moment'
 import Rx from 'rxjs'
 import { withRouter } from 'react-router-dom'
 import {
@@ -13,7 +15,9 @@ import {
   InputItem,
   TextareaItem,
   Button,
+  DatePicker,
 } from 'antd-mobile'
+import enUs from 'antd-mobile/lib/date-picker/locale/en_US'
 import { savePost } from '../../api/posts/posts_api'
 
 
@@ -24,11 +28,15 @@ class CreatePost extends Component {
 		this.state = {
       driver_name: '',
       driver_phone: '',
+    	driver_id: uuid.v4(),
+
       price: 15,
       pickup_gps: [0,0],                // the ad lat according to google
       pickup_address: '',               // the ad lng according to google
       dropoff_gps: [0,0],                // the ad lat according to google
       dropoff_address: '',               // the ad lng according to google
+    	description: '',
+    	leave_time: new Date().getTime(),
 		}
 	}
 
@@ -107,9 +115,21 @@ class CreatePost extends Component {
         <TextareaItem
           title='Description'
           placeholder='Provide a briefing to your passengers'
+          value={this.state.description}
+          onChange={(v) => this.setState({ description: v })}
           rows={4}
           autoHeight
         />
+        <input type='time' value={this.state.leave_time} onChange={v => this.setState({ leave_time: v })} step={1} />
+        {/*<DatePicker
+          mode='time'
+          locale={enUs}
+          minuteStep={2}
+          use12Hours
+          title='Leave Time'
+          value={this.state.leave_time}
+          onChange={v => this.setState({ leave_time: v })}
+        />*/}
       </div>
     )
   }

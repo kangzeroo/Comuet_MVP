@@ -46,14 +46,15 @@ class HomePage extends Component {
 				{
 					this.props.posts.map((post) => {
 						return (
-							<Card key={post.id} style={comStyles().post}>
+							<Card key={post.ride_id} style={comStyles().post}>
 								<Card.Header
-									title={`${post.driver}`}
-									extra={`${post.time}`}
+									title={`${post.driver_name} - ${post.driver_phone}`}
+									extra={`${moment(post.leave_time).fromNow()}`}
 								/>
 								<Card.Body style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
 									<h2>{`$${post.price}`}</h2>
-									<h5>{`${post.pickup} to ${post.dropoff}`}</h5>
+									<p>{`${post.description}`}</p>
+									<h5>{`${post.pickup_address} to ${post.dropoff_address}`}</h5>
 								</Card.Body>
 							</Card>
 						)
