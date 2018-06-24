@@ -4,7 +4,7 @@
 // LOCAL
 
 // PROD
-export const POSTS_BACKEND = 'http://localhost:9999'
+export const POSTS_BACKEND = 'http://107.21.141.195:3000'
 //
 // // STAGING
 // export const POSTS_BACKEND = 'https://website.com:3006'
