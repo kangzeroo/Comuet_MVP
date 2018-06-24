@@ -1,3 +1,6 @@
+# READ THE TODO.TXT FILE!
+
+
 # React Simple WebApp
 ### By Kangzeroo at RentHero.ca
 
