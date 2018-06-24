@@ -1,0 +1,22 @@
+How to Start this up:
+1. $ npm install
+2. $ npm run build
+3. $ npm run start
+4. In Chrome, go to https://localhost:5000 (if there is a security warning, just proceed anyways)
+
+Things Left to Do:
+
+1a. Create the backend routes for `retrieve_posts` and `create_post`
+1b. Setup our database (SQL or MongoDB)
+2. Test the frontend with backend (try retrieving posts, try saving a post)
+3. Pretty it up on the frontend
+4. Implement Facebook Login
+5. Deploy it! (look into Firebase Deploy)
+
+Optionals
+6. Add Google Analytics tracking code
+7. Add Smartlook (screen recording)
+
+
+# Backend Boilerplate
+https://github.com/kangzeroo/Node_Microservice_Boilerplate
